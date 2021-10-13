@@ -1,0 +1,32 @@
+.label-wrapper{
+    color: black;
+    font-size: 30px;
+    margin-left:200px;
+    margin-top: 50px;
+   
+}
+.container input{
+    margin-left: 100px;
+    height: 50px;
+    width:500px;
+    border:2px solid black;
+   
+}
+
+
+.container button{
+    margin-left: 100px;
+    width:508px;
+    background-color:black;
+    color: white;
+    border: none;
+    height: 50px;
+    padding: '0 10px 10px 7px';
+    margin-top:10px;
+
+}
+.btn{
+    display: inline-block;
+     color: black;
+}
+
