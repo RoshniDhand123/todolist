@@ -11,6 +11,7 @@ function FilterButton(props) {
       onClick={() => props.setFilter(props.name)}
     >
       <span>{props.name}</span>
+      
      
     </button>
   

@@ -1,10 +1,11 @@
-import React, { useEffect,  useState } from "react";
+import React, { useEffect,useRef,  useState } from "react";
 import './Form.css';
 
 
 export default function Todo(props) {
   const [isEditing, setEditing] = useState(false);
-  const [newName, setNewName] = useState("");
+  const [newName, setNewName] = useState(props.name);
+
  function handleChange(e) {
     setNewName(e.target.value);
   }
@@ -15,18 +16,20 @@ export default function Todo(props) {
       return;
     }
     props.editTask(props.id, newName);
-    setNewName("");
-    setEditing(false);
+     setEditing(false);
   }
 
   const editingTemplate = (
     <form onSubmit={handleSubmit}>
       <div >
-        <input style={{height:"50px",width:"400px",border:"2px solid black"}}
+      <span>New Name for {props.name}</span>
+      <br/>
+        <input  style={{height:"50px",width:"400px",border:"2px solid black"}}
        
           id={props.id}
-          value={newName || props.name}
+          value={newName}
           onChange={handleChange}
+        
          
         />
       </div>
@@ -58,6 +61,7 @@ export default function Todo(props) {
           type="button"
           onClick={() => setEditing(true)}
          
+         
         >
           Edit 
         </button>
@@ -75,5 +79,5 @@ export default function Todo(props) {
 
 
 
-  return <li >{isEditing ? editingTemplate : viewTemplate}</li>;
+  return isEditing ? editingTemplate : viewTemplate;
 }
